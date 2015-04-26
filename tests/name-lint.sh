@@ -10,3 +10,5 @@ if [ $? -eq 0 ]; then
     echo "Please spell the conference name PyCon UK."
     exit 1
 fi
+
+exit 0
