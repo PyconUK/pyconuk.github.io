@@ -17,3 +17,5 @@ run:
 tests:
 	bash tests/name-lint.sh
 	docker start evil_hoover && docker exec evil_hoover tests/htmlproof.sh
+
+.PHONY: build run tests
