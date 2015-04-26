@@ -15,7 +15,7 @@ run:
 	docker run -p 80:4000 -v $(pwd):/opt/pyconuk/site:rw -ti pyconuk.org
 
 tests:
-	bash tests/name-lint.sh
-	docker start evil_hoover && docker exec evil_hoover tests/htmlproof.sh
+	@echo "Checking the conference name" && bash tests/name-lint.sh
+	@echo "Proofing the HTML" && docker start evil_hoover && docker exec evil_hoover tests/htmlproof.sh
 
 .PHONY: build run tests
