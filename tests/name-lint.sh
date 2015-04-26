@@ -1,15 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
-LINT="$(grep -e "Pycon UK" -e "pycon UK" -e "pyconUK" -e "PyConUK" \
+
+grep -e "Pycon UK" -e "pycon UK" -e "pyconUK" -e "PyConUK" \
         --line-number --recursive . \
-        --include "*.html" --include "*.rst")"
+        --include "*.html" --include "*.rst"
 
-SUCCESS=0
-
-if [ ! -z $LINT ]; then
-    echo "${LINT}"
+# We found misspellings, warn the user and exit
+if [ $? -eq 0 ]; then
     echo "Please spell the conference name PyCon UK."
-    SUCCESS=1
+    exit 1
 fi
-
-exit $SUCCESS
