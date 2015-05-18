@@ -1,6 +1,6 @@
 language: ruby
 
 script:
-    - bash name-lint.sh
     - bundle exec jekyll build
-    - bundle exec htmlproof --href-swap ".*pyconuk.org/:/" _site/
+    - bash tests/name-lint.sh
+    - bash tests/htmlproof.sh
